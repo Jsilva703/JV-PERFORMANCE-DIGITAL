@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => {
       host: "0.0.0.0",
     },
     plugins: [react()],
-    base: "/JV-PERFORMANCE-DIGITAL/",
+    base: '/',
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "."),
