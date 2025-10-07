@@ -3,7 +3,7 @@ import type { Plan, SupportPlan } from '../types';
 
 const supportPlanData: SupportPlan = {
     title: 'Plano de Suporte e Evolução',
-    price: 'R$ 90/mês',
+    price: 'R$ 100/mês',
     features: [
         'Monitoramento e segurança do site',
         'Pequenas atualizações (até 2h/mês)',
