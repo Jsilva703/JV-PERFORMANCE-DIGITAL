@@ -20,7 +20,7 @@ const projects: Project[] = [
 
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
   return (
-    <div className="bg-slate-800 rounded-lg overflow-hidden shadow-xl transform hover:-translate-y-2 transition-transform duration-300">
+    <div className="bg-slate-800 rounded-lg overflow-hidden shadow-xl transform hover:-translate-y-2 transition-all duration-300 hover:ring-2 hover:ring-orange-500/50 hover:shadow-lg hover:shadow-orange-500/20">
       <img src={project.image} alt={project.name} className="w-full h-48 object-cover" />
       <div className="p-6">
         <h3 className="text-xl font-bold text-orange-500 mb-2">{project.name}</h3>
