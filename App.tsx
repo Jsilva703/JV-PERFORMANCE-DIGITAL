@@ -8,6 +8,7 @@ import PricingSection from './components/PricingSection';
 import IronmanSection from './components/IronmanSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
+import AnimatedSection from './components/AnimatedSection';
 
 const App: React.FC = () => {
   return (
@@ -15,11 +16,21 @@ const App: React.FC = () => {
       <Header />
       <main>
         <HeroSection />
-        <JourneySection />
-        <PortfolioSection />
-        <PricingSection />
-        <IronmanSection />
-        <ContactSection />
+        <AnimatedSection>
+            <JourneySection />
+        </AnimatedSection>
+        <AnimatedSection>
+            <PortfolioSection />
+        </AnimatedSection>
+        <AnimatedSection>
+            <PricingSection />
+        </AnimatedSection>
+        <AnimatedSection>
+            <IronmanSection />
+        </AnimatedSection>
+        <AnimatedSection>
+            <ContactSection />
+        </AnimatedSection>
       </main>
       <Footer />
     </div>
