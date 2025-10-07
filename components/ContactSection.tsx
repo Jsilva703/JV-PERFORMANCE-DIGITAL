@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const ContactSection: React.FC = () => {
@@ -14,7 +15,7 @@ const ContactSection: React.FC = () => {
           href="https://wa.me/5511952445898?text=Ol%C3%A1%2C%20vi%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-green-500 text-white font-bold py-4 px-10 rounded-full text-xl uppercase hover:bg-green-600 transition-transform transform hover:scale-105 duration-300 shadow-lg"
+          className="inline-block bg-green-500 text-white font-bold py-4 px-10 rounded-full text-xl uppercase hover:bg-green-600 transition-transform transform hover:scale-105 duration-300 shadow-lg animate-pulse-scale"
         >
           Falar com João Victor no WhatsApp
         </a>

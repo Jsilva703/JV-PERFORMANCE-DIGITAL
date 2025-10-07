@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const WhatsAppIcon: React.FC = () => (
@@ -48,7 +49,8 @@ const navLinks = [
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-slate-950 py-12">
+    <footer className="bg-slate-950 py-12 relative">
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-slate-950 via-slate-700 to-slate-950"></div>
       <div className="container mx-auto px-6 text-center text-slate-500">
         <a href="#" aria-label="Voltar ao topo" className="inline-block mb-8">
             <Logo />
@@ -70,7 +72,7 @@ const Footer: React.FC = () => {
                 <span>Email</span>
             </a>
         </div>
-        <div className="border-t border-slate-800 pt-8">
+        <div className="border-t border-slate-800/50 pt-8 mt-8">
             <p>&copy; {new Date().getFullYear()} JV Performance Digital. Todos os direitos reservados.</p>
         </div>
       </div>

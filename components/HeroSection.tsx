@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const HeroSection: React.FC = () => {
@@ -39,6 +40,12 @@ const HeroSection: React.FC = () => {
           className="mt-10 inline-block bg-orange-500 text-white font-bold py-3 px-8 rounded-full text-lg uppercase hover:bg-orange-600 transition-transform transform hover:scale-105 duration-300 shadow-lg shadow-orange-500/30"
         >
           Veja Meus Projetos
+        </a>
+      </div>
+      
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10">
+        <a href="#jornada" aria-label="Scroll down to Journey section">
+          <svg className="w-8 h-8 text-slate-500 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
         </a>
       </div>
     </section>
