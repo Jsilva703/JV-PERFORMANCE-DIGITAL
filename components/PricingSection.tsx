@@ -32,8 +32,8 @@ const plans: Plan[] = [
     name: "Plano Profissional",
     description:
       "Para negócios que buscam credibilidade, marca própria e a melhor performance digital.",
-    price: "R$ 110/mês",
-    priceDetails: "+ R$ 800 taxa de desenvolvimento",
+    price: "R$ 950",
+    priceDetails: "Pagamento único",
     features: [
       "Site profissional com design moderno",
       "Design responsivo para celular e desktop",
@@ -41,8 +41,8 @@ const plans: Plan[] = [
       "Hospedagem profissional de alta performance",
       "Formulário de contato profissional",
       "Otimização técnica para ranquear no Google (SEO)",
-      "Plano de Suporte e Evolução Incluso",
     ],
+    supportPlan: supportPlanData,
     buttonText: "Quero Me Tornar Profissional",
     recommended: true,
   },
