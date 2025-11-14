@@ -9,11 +9,8 @@ interface LandingPagesProps {
 const LandingPages: React.FC<LandingPagesProps> = ({ setCurrentPage }) => {
   const handleViewPlans = () => {
     if (setCurrentPage) {
-      setCurrentPage('home');
-      setTimeout(() => {
-        const element = document.querySelector('#planos');
-        if (element) element.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
+      setCurrentPage('planos');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
   const examples = [

@@ -1,7 +1,12 @@
 
 import React from 'react';
+import type { Page } from '../App';
 
-const HeroSection: React.FC = () => {
+interface HeroSectionProps {
+  setCurrentPage?: (page: Page) => void;
+}
+
+const HeroSection: React.FC<HeroSectionProps> = ({ setCurrentPage }) => {
   return (
     <section 
       id="home" 
@@ -34,12 +39,10 @@ const HeroSection: React.FC = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4 w-full sm:w-auto">
-          <a 
-            href="/planos"
-            onClick={(e) => {
-              e.preventDefault();
-              if ((window as any).setCurrentPage) {
-                (window as any).setCurrentPage('planos');
+          <button 
+            onClick={() => {
+              if (setCurrentPage) {
+                setCurrentPage('planos');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }
             }}
@@ -47,7 +50,7 @@ const HeroSection: React.FC = () => {
           >
             Ver Planos e Preços
             <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
-          </a>
+          </button>
           <a 
             href="https://wa.me/5511952445898?text=Ol%C3%A1%2C%20quero%20criar%20meu%20site%20profissional!"
             target="_blank"

@@ -33,7 +33,7 @@ const App: React.FC = () => {
       default:
         return (
           <main>
-            <HeroSection />
+            <HeroSection setCurrentPage={setCurrentPage} />
             <AnimatedSection>
               <ServicesSection />
             </AnimatedSection>
