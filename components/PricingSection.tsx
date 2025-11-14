@@ -44,7 +44,7 @@ Estou pronto para começar meu projeto!`,
       "Para negócios que buscam credibilidade, marca própria e a melhor performance digital.",
     price: "R$ 650",
     originalPrice: "R$ 950",
-    priceDetails: "Pagamento único",
+    priceDetails: "+ valor do domínio",
     features: [
       "Site profissional com design moderno",
       "Design responsivo para celular e desktop",
@@ -61,7 +61,7 @@ Estou pronto para começar meu projeto!`,
 
 Quero contratar o *Plano Profissional* ⭐ (MAIS POPULAR)
 
-💰 *Valor Black Friday:* R$ 650 (de R$ 950)
+💰 *Valor Black Friday:* R$ 650 (de R$ 950) + valor do domínio
 ✅ *Economia:* R$ 300
 
 Quero levar meu negócio para o próximo nível!`,
