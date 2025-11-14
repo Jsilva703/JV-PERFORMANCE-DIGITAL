@@ -26,13 +26,13 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
         <img 
           src={project.image} 
           alt={project.name} 
-          className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500" 
+          className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-500" 
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent opacity-40"></div>
       </div>
-      <div className="p-6">
-        <h3 className="text-2xl font-bold text-slate-900 mb-3">{project.name}</h3>
-        <div className="space-y-3 mb-6">
+      <div className="p-4">
+        <h3 className="text-xl font-bold text-slate-900 mb-2">{project.name}</h3>
+        <div className="space-y-2 mb-4">
           <p className="text-slate-600 text-sm leading-relaxed">
             {project.solution}
           </p>
@@ -56,17 +56,17 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
 
 const PortfolioSection: React.FC = () => {
   return (
-    <section id="projetos" className="py-20 bg-white">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-slate-900">
+    <section id="portfolio" className="py-12 sm:py-16 bg-white">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-slate-900">
             Projetos Recentes
           </h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Sites que ajudaram negócios a ter presença digital profissional
           </p>
         </div>
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-4xl mx-auto">
           {projects.map((project, index) => (
             <ProjectCard key={index} project={project} />
           ))}

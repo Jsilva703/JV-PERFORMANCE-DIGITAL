@@ -60,30 +60,30 @@ const services = [
 
 const ServicesSection: React.FC = () => {
   return (
-    <section id="servicos" className="py-20 bg-slate-100">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-slate-900">
+    <section id="servicos" className="py-12 sm:py-16 bg-slate-100">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-slate-900">
             O que Você Recebe
           </h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Tudo que seu negócio precisa para ter uma presença digital profissional e gerar resultados
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => (
             <div 
               key={index}
-              className="bg-white p-8 rounded-2xl border border-slate-200 hover:border-emerald-500/50 hover:shadow-xl transition-all duration-300 hover:transform hover:-translate-y-1"
+              className="bg-white p-6 rounded-2xl border border-slate-200 hover:border-emerald-500/50 hover:shadow-xl transition-all duration-300 hover:transform hover:-translate-y-1"
             >
-              <div className="text-emerald-600 mb-4">
+              <div className="text-emerald-600 mb-3">
                 {service.icon}
               </div>
-              <h3 className="text-xl font-bold mb-3 text-slate-900">
+              <h3 className="text-lg font-bold mb-2 text-slate-900">
                 {service.title}
               </h3>
-              <p className="text-slate-600 leading-relaxed">
+              <p className="text-slate-600 leading-relaxed text-sm">
                 {service.description}
               </p>
             </div>
