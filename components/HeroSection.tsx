@@ -35,7 +35,14 @@ const HeroSection: React.FC = () => {
 
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4 w-full sm:w-auto">
           <a 
-            href="#planos"
+            href="/planos"
+            onClick={(e) => {
+              e.preventDefault();
+              if ((window as any).setCurrentPage) {
+                (window as any).setCurrentPage('planos');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+            }}
             className="group w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white font-bold rounded-xl text-sm sm:text-base hover:shadow-lg hover:shadow-emerald-500/50 transition-all duration-300 hover:scale-105 text-center"
           >
             Ver Planos e Preços

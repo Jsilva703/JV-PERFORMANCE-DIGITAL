@@ -19,7 +19,7 @@ const plans: Plan[] = [
       "Para validar uma ideia, criar o primeiro site ou para projetos com orçamento inicial limitado.",
     price: "R$ 400",
     originalPrice: "R$ 550",
-    priceDetails: "Pagamento único",
+    priceDetails: "Pagamento único ou 2x no cartão",
     features: [
       "Landing Page profissional de até 4 seções",
       "Design otimizado para Desktop",
@@ -44,7 +44,7 @@ Estou pronto para começar meu projeto!`,
       "Para negócios que buscam credibilidade, marca própria e a melhor performance digital.",
     price: "R$ 650",
     originalPrice: "R$ 950",
-    priceDetails: "+ valor do domínio",
+    priceDetails: "Até 2x no cartão + valor do domínio",
     features: [
       "Site profissional com design moderno",
       "Design responsivo para celular e desktop",
@@ -371,7 +371,7 @@ const PricingSection: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </summary>
-              <p className="mt-3 sm:mt-4 text-slate-600 text-xs sm:text-sm">Pagamento único via Mercado Pago (PIX, cartão ou boleto). Você escolhe a forma que preferir! Sem mensalidades.</p>
+              <p className="mt-3 sm:mt-4 text-slate-600 text-xs sm:text-sm">Pagamento via Mercado Pago: PIX à vista, até 2x no cartão sem juros, ou boleto. Você escolhe a forma que preferir! Sem mensalidades.</p>
             </details>
             
             <details className="bg-white rounded-xl p-3 sm:p-4 border border-slate-200 shadow-lg cursor-pointer group">

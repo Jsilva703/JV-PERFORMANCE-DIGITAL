@@ -1,5 +1,10 @@
 
 import React from 'react';
+import type { Page } from '../App';
+
+interface FooterProps {
+  setCurrentPage?: (page: Page) => void;
+}
 
 const WhatsAppIcon: React.FC = () => (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
@@ -47,7 +52,16 @@ const navLinks = [
     { href: '#contato', text: 'Contato' },
 ];
 
-const Footer: React.FC = () => {
+const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
+  const handleLinkClick = (href: string) => {
+    if (setCurrentPage) {
+      setCurrentPage('home');
+      setTimeout(() => {
+        const element = document.querySelector(href);
+        if (element) element.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  };
   return (
         <footer className="bg-slate-900 text-white py-8 sm:py-12">
       <div className="container mx-auto px-4 sm:px-6">
@@ -59,10 +73,10 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Links Rápidos</h4>
             <ul className="space-y-2 text-sm sm:text-base">
-              <li><a href="#servicos" className="text-slate-400 hover:text-emerald-400 transition-colors">Serviços</a></li>
-              <li><a href="#portfolio" className="text-slate-400 hover:text-emerald-400 transition-colors">Portfólio</a></li>
-              <li><a href="#planos" className="text-slate-400 hover:text-emerald-400 transition-colors">Planos</a></li>
-              <li><a href="#contato" className="text-slate-400 hover:text-emerald-400 transition-colors">Contato</a></li>
+              <li><a href="#servicos" onClick={(e) => { e.preventDefault(); handleLinkClick('#servicos'); }} className="text-slate-400 hover:text-emerald-400 transition-colors cursor-pointer">Serviços</a></li>
+              <li><a href="#portfolio" onClick={(e) => { e.preventDefault(); handleLinkClick('#portfolio'); }} className="text-slate-400 hover:text-emerald-400 transition-colors cursor-pointer">Portfólio</a></li>
+              <li><button onClick={() => { if (setCurrentPage) setCurrentPage('planos'); }} className="text-slate-400 hover:text-emerald-400 transition-colors cursor-pointer">Planos</button></li>
+              <li><a href="#contato" onClick={(e) => { e.preventDefault(); handleLinkClick('#contato'); }} className="text-slate-400 hover:text-emerald-400 transition-colors cursor-pointer">Contato</a></li>
             </ul>
           </div>
           <div className="sm:col-span-2 lg:col-span-1">
