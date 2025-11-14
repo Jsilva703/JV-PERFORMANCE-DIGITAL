@@ -40,7 +40,7 @@ const PlanosPage: React.FC<PlanosPageProps> = ({ setCurrentPage }) => {
               <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-lg text-center">
                 <div className="text-4xl mb-3">⚡</div>
                 <h3 className="font-bold text-slate-900 mb-2">Entrega Rápida</h3>
-                <p className="text-sm text-slate-600">Seu site pronto em até 5 dias úteis</p>
+                <p className="text-sm text-slate-600">Seu site pronto em até 7 dias úteis</p>
               </div>
               
               <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-lg text-center">

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
+import ProblemsSection from './components/ProblemsSection';
 import ServicesSection from './components/ServicesSection';
 import PortfolioSection from './components/PortfolioSection';
 import PricingSection from './components/PricingSection';
@@ -34,6 +35,9 @@ const App: React.FC = () => {
         return (
           <main>
             <HeroSection setCurrentPage={setCurrentPage} />
+            <AnimatedSection>
+              <ProblemsSection setCurrentPage={setCurrentPage} />
+            </AnimatedSection>
             <AnimatedSection>
               <ServicesSection />
             </AnimatedSection>

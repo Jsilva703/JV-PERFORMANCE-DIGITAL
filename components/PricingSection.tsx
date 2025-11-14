@@ -246,7 +246,7 @@ const PricingCard: React.FC<{ plan: Plan }> = ({ plan }) => {
               <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 4.315 1.731 6.086l-1.009 3.686 3.767-.986z"/>
             </svg>
           )}
-          {plan.comingSoon ? plan.buttonText : 'Tirar Dúvidas'}
+          {plan.comingSoon ? plan.buttonText : 'Contratar Agora'}
         </a>
       </div>
     </div>
@@ -351,7 +351,7 @@ const PricingSection: React.FC = () => {
           <div className="text-center p-3 sm:p-4 bg-white rounded-xl border border-slate-200 shadow-lg">
             <div className="text-xl sm:text-2xl mb-1">⚡</div>
             <h4 className="font-bold mb-1 text-slate-900 text-xs sm:text-sm">Entrega Rápida</h4>
-            <p className="text-[10px] sm:text-xs text-slate-600">Até 5 dias</p>
+            <p className="text-[10px] sm:text-xs text-slate-600">Até 7 dias</p>
           </div>
           <div className="text-center p-3 sm:p-4 bg-white rounded-xl border border-slate-200 shadow-lg">
             <div className="text-xl sm:text-2xl mb-1">💬</div>
@@ -381,7 +381,7 @@ const PricingSection: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </summary>
-              <p className="mt-3 sm:mt-4 text-slate-600 text-xs sm:text-sm">Até 5 dias após a confirmação do pagamento e envio dos materiais (textos, imagens, logo). Durante esse período você tem direito a até 4 revisões.</p>
+              <p className="mt-3 sm:mt-4 text-slate-600 text-xs sm:text-sm">Até 7 dias após a confirmação do pagamento e envio dos materiais (textos, imagens, logo). Durante esse período você tem direito a até 4 revisões.</p>
             </details>
             
             <details className="bg-white rounded-xl p-3 sm:p-4 border border-slate-200 shadow-lg cursor-pointer group">

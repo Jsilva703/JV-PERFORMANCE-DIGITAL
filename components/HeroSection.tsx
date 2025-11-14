@@ -68,7 +68,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ setCurrentPage }) => {
             <div className="text-[10px] sm:text-xs text-slate-600">Clientes Satisfeitos</div>
           </div>
           <div className="text-center">
-            <div className="text-xl sm:text-2xl font-bold text-emerald-600 mb-1">5 dias</div>
+            <div className="text-xl sm:text-2xl font-bold text-emerald-600 mb-1">7 dias</div>
             <div className="text-[10px] sm:text-xs text-slate-600">Prazo de Entrega</div>
           </div>
           <div className="text-center">
