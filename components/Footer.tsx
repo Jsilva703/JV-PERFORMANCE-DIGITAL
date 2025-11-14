@@ -20,7 +20,7 @@ const Logo: React.FC = () => (
         <title>JV Performance Digital Logo</title>
         <path
           d="M2 18C2 9.16344 9.16344 2 18 2C26.8366 2 34 9.16344 34 18C34 26.8366 26.8366 34 18 34"
-          stroke="#F97316"
+          stroke="#10b981"
           strokeWidth="4"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -35,45 +35,45 @@ const Logo: React.FC = () => (
       </svg>
       <span className="text-xl font-bold">
         <span className="text-slate-200">JV Performance </span>
-        <span className="text-orange-500">Digital</span>
+        <span className="text-emerald-400">Digital</span>
       </span>
     </div>
   );
 
 const navLinks = [
-    { href: '#jornada', text: 'Jornada' },
-    { href: '#projetos', text: 'Projetos' },
+    { href: '#servicos', text: 'Serviços' },
+    { href: '#projetos', text: 'Portfólio' },
     { href: '#planos', text: 'Planos' },
     { href: '#contato', text: 'Contato' },
 ];
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-slate-950 py-12 relative">
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-slate-950 via-slate-700 to-slate-950"></div>
-      <div className="container mx-auto px-6 text-center text-slate-500">
+    <footer className="bg-slate-900 py-12 relative">
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-slate-900 via-slate-300 to-slate-900"></div>
+      <div className="container mx-auto px-6 text-center text-slate-400">
         <a href="#" aria-label="Voltar ao topo" className="inline-block mb-8">
             <Logo />
         </a>
         <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-8">
             {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className="text-slate-400 hover:text-orange-500 transition-colors duration-300">
+            <a key={link.href} href={link.href} className="text-slate-300 hover:text-emerald-400 transition-colors duration-300">
                 {link.text}
             </a>
             ))}
         </nav>
         <div className="flex justify-center items-center space-x-6 mb-8">
-            <a href="https://wa.me/5511952445898" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-orange-500 transition-colors duration-300">
+            <a href="https://wa.me/5511952445898" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-slate-300 hover:text-emerald-400 transition-colors duration-300">
                 <WhatsAppIcon />
                 <span>WhatsApp</span>
             </a>
-            <a href="mailto:jvs.devsilva@gmail.com" className="flex items-center gap-2 hover:text-orange-500 transition-colors duration-300">
+            <a href="mailto:jvs.devsilva@gmail.com" className="flex items-center gap-2 text-slate-300 hover:text-emerald-400 transition-colors duration-300">
                 <EmailIcon />
                 <span>Email</span>
             </a>
         </div>
-        <div className="border-t border-slate-800/50 pt-8 mt-8">
-            <p>&copy; {new Date().getFullYear()} JV Performance Digital. Todos os direitos reservados.</p>
+        <div className="border-t border-slate-700/50 pt-8 mt-8">
+            <p className="text-slate-400">&copy; {new Date().getFullYear()} JV Performance Digital. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

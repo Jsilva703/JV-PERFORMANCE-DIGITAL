@@ -2,31 +2,27 @@
 import React from 'react';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
-import JourneySection from './components/JourneySection';
+import ServicesSection from './components/ServicesSection';
 import PortfolioSection from './components/PortfolioSection';
 import PricingSection from './components/PricingSection';
-import IronmanSection from './components/IronmanSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import AnimatedSection from './components/AnimatedSection';
 
 const App: React.FC = () => {
   return (
-    <div className="bg-slate-900 text-slate-200">
+    <div className="bg-white text-slate-900">
       <Header />
       <main>
         <HeroSection />
         <AnimatedSection>
-            <JourneySection />
+            <ServicesSection />
         </AnimatedSection>
         <AnimatedSection>
             <PortfolioSection />
         </AnimatedSection>
         <AnimatedSection>
             <PricingSection />
-        </AnimatedSection>
-        <AnimatedSection>
-            <IronmanSection />
         </AnimatedSection>
         <AnimatedSection>
             <ContactSection />
