@@ -25,14 +25,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({ setCurrentPage }) => {
       ></div>
 
       <div className="relative z-10 max-w-5xl mx-auto">
-          <div className="inline-block px-4 sm:px-6 py-2 sm:py-2.5 bg-gradient-to-r from-red-500/20 to-orange-500/20 backdrop-blur-sm border border-red-500/40 rounded-full mb-6 shadow-lg shadow-red-500/30 hover:shadow-red-500/50 transition-all duration-300 hover:scale-105 animate-in fade-in slide-in-from-top duration-700 animate-pulse">
+          {/* <div className="inline-block px-4 sm:px-6 py-2 sm:py-2.5 bg-gradient-to-r from-red-500/20 to-orange-500/20 backdrop-blur-sm border border-red-500/40 rounded-full mb-6 shadow-lg shadow-red-500/30 hover:shadow-red-500/50 transition-all duration-300 hover:scale-105 animate-in fade-in slide-in-from-top duration-700 animate-pulse">
             <span className="text-red-400 font-bold text-xs sm:text-sm flex items-center gap-1.5 sm:gap-2">
               <span className="text-base sm:text-lg">🔥</span>
               <span className="hidden sm:inline">Black Friday: Até 35% OFF - Últimas Vagas de Novembro!</span>
               <span className="sm:hidden">Black Friday: 35% OFF</span>
               <span className="text-base sm:text-lg">🔥</span>
             </span>
-          </div>                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight animate-in fade-in slide-in-from-bottom duration-700 delay-100">
+          </div>                   */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight animate-in fade-in slide-in-from-bottom duration-700 delay-100">
             <span className="block sm:inline">Transforme Sua Presença</span>{" "}
             <span className="block sm:inline">Digital com</span>{" "}
             <span className="block bg-gradient-to-r from-emerald-400 via-emerald-500 to-emerald-600 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto] relative">
