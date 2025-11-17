@@ -67,18 +67,18 @@ const FAQSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto space-y-4">
+        <div className="max-w-3xl mx-auto space-y-3 sm:space-y-4">
           {faqData.map((faq, index) => (
             <div
               key={index}
-              className="group bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 animate-in fade-in slide-in-from-bottom"
+              className="group bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-xl sm:rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 animate-in fade-in slide-in-from-bottom"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-800/30 transition-colors duration-200"
+                className="w-full px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between text-left hover:bg-slate-800/30 transition-colors duration-200"
               >
-                <span className="text-white font-semibold text-base sm:text-lg pr-4">
+                <span className="text-white font-semibold text-sm sm:text-base md:text-lg pr-3 sm:pr-4 leading-snug">
                   {faq.question}
                 </span>
                 <svg
@@ -98,7 +98,7 @@ const FAQSection: React.FC = () => {
                   openIndex === index ? 'max-h-96' : 'max-h-0'
                 }`}
               >
-                <div className="px-6 pb-5 text-slate-300 leading-relaxed border-t border-slate-700/30 pt-4">
+                <div className="px-4 sm:px-6 pb-4 sm:pb-5 text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-700/30 pt-4">
                   {faq.answer}
                 </div>
               </div>
@@ -107,13 +107,13 @@ const FAQSection: React.FC = () => {
         </div>
 
         {/* CTA após FAQ */}
-        <div className="text-center mt-12 animate-in fade-in duration-700 delay-500">
-          <p className="text-slate-400 mb-4">Ainda tem dúvidas?</p>
+        <div className="text-center mt-10 sm:mt-12 animate-in fade-in duration-700 delay-500 px-4">
+          <p className="text-slate-400 mb-4 text-sm sm:text-base">Ainda tem dúvidas?</p>
           <a
             href="https://wa.me/5511952445898?text=Oi!%20Tenho%20algumas%20d%C3%BAvidas%20sobre%20os%20planos.%20Pode%20me%20ajudar%3F"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-slate-800/50 border-2 border-emerald-500/50 text-emerald-400 font-semibold rounded-xl hover:bg-emerald-500/10 hover:scale-105 transition-all duration-300"
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 bg-slate-800/50 border-2 border-emerald-500/50 text-emerald-400 font-semibold text-sm sm:text-base rounded-xl hover:bg-emerald-500/10 hover:scale-105 transition-all duration-300 w-full sm:w-auto justify-center"
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 4.315 1.731 6.086l-1.009 3.686 3.767-.986z"/>

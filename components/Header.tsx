@@ -207,7 +207,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
               href="https://wa.me/5511952445898?text=Ol%C3%A1%2C%20quero%20criar%20meu%20site%20profissional!"
               target="_blank"
               rel="noopener noreferrer"
-              className="group/whats relative px-5 py-2.5 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-bold rounded-xl transition-all duration-300 text-sm lg:text-base flex-shrink-0 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:scale-105 overflow-hidden"
+              className="group/whats relative px-4 lg:px-5 py-2 lg:py-2.5 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-bold rounded-xl transition-all duration-300 text-xs lg:text-sm xl:text-base flex-shrink-0 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:scale-105 overflow-hidden"
             >
               <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/25 to-white/0 translate-x-[-100%] group-hover/whats:translate-x-[100%] transition-transform duration-700"></span>
               <span className="relative z-10 flex items-center gap-2">
@@ -225,7 +225,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
               onClick={() => setIsMenuOpen(!isMenuOpen)} 
               aria-label="Toggle menu" 
               aria-expanded={isMenuOpen}
-              className="relative text-white hover:text-emerald-400 transition-all duration-300 text-2xl p-3 -mr-2 rounded-lg hover:bg-slate-800/50 group/burger"
+              className="relative text-white hover:text-emerald-400 transition-all duration-300 text-xl sm:text-2xl p-2 sm:p-3 -mr-1 sm:-mr-2 rounded-lg hover:bg-slate-800/50 group/burger touch-manipulation"
             >
               <span className="absolute inset-0 rounded-lg bg-gradient-to-r from-emerald-500/0 via-emerald-500/10 to-emerald-500/0 opacity-0 group-hover/burger:opacity-100 transition-opacity duration-300"></span>
               <span className="relative z-10">{isMenuOpen ? '✕' : '☰'}</span>
@@ -245,7 +245,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
       ></div>
 
       {/* Mobile Menu Panel */}
-      <div className={`md:hidden bg-slate-900/95 backdrop-blur-2xl fixed top-0 right-0 h-full w-4/5 max-w-sm z-50 shadow-2xl shadow-black/50 border-l border-slate-700/50 transform transition-transform duration-300 ease-in-out overflow-y-auto ${
+      <div className={`md:hidden bg-slate-900/95 backdrop-blur-2xl fixed top-0 right-0 h-full w-[85%] sm:w-4/5 max-w-sm z-50 shadow-2xl shadow-black/50 border-l border-slate-700/50 transform transition-transform duration-300 ease-in-out overflow-y-auto ${
         isMenuOpen ? 'translate-x-0' : 'translate-x-full'
       }`}>
         <div className="flex justify-between items-center p-6 border-b border-slate-800/50 bg-gradient-to-r from-emerald-500/5 via-transparent to-transparent">
