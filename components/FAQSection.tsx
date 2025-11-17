@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { trackFAQInteraction, trackWhatsAppClick, trackButtonClick } from '../utils/analytics';
 
 interface FAQItem {
   question: string;
@@ -44,6 +45,10 @@ const FAQSection: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {
+    const isOpening = openIndex !== index;
+    const question = faqData[index].question;
+    
+    trackFAQInteraction(question, isOpening ? 'open' : 'close');
     setOpenIndex(openIndex === index ? null : index);
   };
 

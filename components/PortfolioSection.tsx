@@ -1,6 +1,7 @@
 
 import React from 'react';
 import type { Project } from '../types';
+import { trackPortfolioClick, trackExternalLink } from '../utils/analytics';
 
 const projects: Project[] = [
   {
@@ -49,6 +50,10 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
           href={project.link}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => {
+            trackPortfolioClick(project.name, project.link);
+            trackExternalLink(project.link, `Projeto: ${project.name}`);
+          }}
           className="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 font-semibold group/link transition-all duration-300 hover:gap-3"
         >
           Ver Projeto Completo

@@ -1,6 +1,7 @@
 
 import React from 'react';
 import type { Page } from '../App';
+import { trackButtonClick, trackWhatsAppClick, trackNavigation } from '../utils/analytics';
 
 interface HeroSectionProps {
   setCurrentPage?: (page: Page) => void;
@@ -62,6 +63,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ setCurrentPage }) => {
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4 w-full sm:w-auto max-w-lg sm:max-w-none mx-auto">
           <button 
             onClick={() => {
+              trackButtonClick('Ver Planos - Hero CTA', 'Hero Section', 'planos');
+              trackNavigation('home', 'planos', 'button');
               if (setCurrentPage) {
                 setCurrentPage('planos');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -82,6 +85,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ setCurrentPage }) => {
             href="https://wa.me/5511952445898?text=Ol%C3%A1!%20Vi%20o%20site%20e%20quero%20saber%20mais%20sobre%20os%20planos.%20Pode%20me%20ajudar%3F"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => {
+              trackWhatsAppClick('Hero Section', 'Dúvidas sobre planos');
+              trackButtonClick('WhatsApp - Tirar Dúvidas', 'Hero Section', 'WhatsApp');
+            }}
             className="group/whats relative w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-slate-800/70 backdrop-blur-sm text-white font-semibold rounded-xl text-sm sm:text-base border-2 border-slate-600/50 hover:border-emerald-500/70 hover:bg-slate-800/90 transition-all duration-300 hover:scale-105 text-center"
           >
             <span className="relative flex items-center justify-center gap-2">

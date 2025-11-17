@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import type { Plan, SupportPlan } from "../types";
+import { trackPlanInterest, trackWhatsAppClick, trackButtonClick, trackConversion } from "../utils/analytics";
 
 const supportPlanData: SupportPlan = {
   title: "Plano de Suporte e Evolução",
@@ -234,6 +235,11 @@ const PricingCard: React.FC<{ plan: Plan }> = ({ plan }) => {
             href="https://link.mercadopago.com.br/devpages"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => {
+              trackPlanInterest(plan.name, plan.price, 'click_payment');
+              trackConversion('Payment Click', `${plan.name} - ${plan.price}`);
+              trackButtonClick('Pagamento Direto', plan.name, 'Mercado Pago');
+            }}
             className="w-full block text-center bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-bold py-3.5 px-4 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 text-sm relative z-30 overflow-hidden group/btn"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></span>
@@ -247,6 +253,13 @@ const PricingCard: React.FC<{ plan: Plan }> = ({ plan }) => {
         )}
         <a
           {...linkProps}
+          onClick={() => {
+            if (!plan.comingSoon) {
+              trackPlanInterest(plan.name, plan.price, 'click_whatsapp');
+              trackWhatsAppClick(plan.name, plan.whatsappMessage || '');
+              trackButtonClick('WhatsApp Plano', plan.name, 'WhatsApp');
+            }
+          }}
           className={`w-full block text-center text-white font-bold py-3 px-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 text-sm relative z-30 ${buttonClasses}`}
         >
           {!plan.comingSoon && (
