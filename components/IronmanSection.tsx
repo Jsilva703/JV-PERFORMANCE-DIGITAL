@@ -8,11 +8,14 @@ const IronmanSection: React.FC = () => {
   const progressPercentage = (arrecadado / meta) * 100;
 
   return (
-    <section id="ironman" className="py-20 bg-slate-800">
-      <div ref={ref} className="container mx-auto px-6 text-center max-w-3xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">
+    <section id="ironman" className="py-20 bg-slate-800 relative overflow-hidden">
+      {/* Background futurista */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(249,115,22,0.05),transparent_70%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20" />
+      <div ref={ref} className="container mx-auto px-6 text-center max-w-3xl relative z-10">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
           Seu Projeto Impulsiona{" "}
-          <span className="text-orange-500">Meu Sonho</span>
+          <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">Meu Sonho</span>
         </h2>
         <p className="text-lg text-slate-300 mb-8">
           Minha meta é competir no Ironman 70.3. Uma prova que exige o máximo de

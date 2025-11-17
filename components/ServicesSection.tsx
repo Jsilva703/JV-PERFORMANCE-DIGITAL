@@ -60,14 +60,16 @@ const services = [
 
 const ServicesSection: React.FC = () => {
   return (
-    <section id="servicos" className="py-12 sm:py-16 bg-slate-100">
-      <div className="container mx-auto px-4 sm:px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-slate-900">
-            O que Você Recebe
+    <section id="servicos" className="py-12 sm:py-16 bg-slate-900 relative overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,0.05),transparent_50%)]" />
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+                <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+            Nossos <span className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">Serviços</span>
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Tudo que seu negócio precisa para ter uma presença digital profissional e gerar resultados
+          <p className="text-slate-400 max-w-2xl mx-auto text-lg">
+            Soluções completas para transformar sua presença digital
           </p>
         </div>
         
@@ -75,15 +77,17 @@ const ServicesSection: React.FC = () => {
           {services.map((service, index) => (
             <div 
               key={index}
-              className="bg-white p-6 rounded-2xl border border-slate-200 hover:border-emerald-500/50 hover:shadow-xl transition-all duration-300 hover:transform hover:-translate-y-1"
+              className="relative bg-slate-800/50 backdrop-blur-sm p-6 rounded-2xl border border-slate-700/50 hover:border-emerald-500/50 hover:bg-slate-800/80 hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-500 hover:transform hover:scale-105 group/service overflow-hidden"
             >
-              <div className="text-emerald-600 mb-3">
+              {/* Efeito de brilho */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-500/5 to-transparent translate-x-[-100%] group-hover/service:translate-x-[100%] transition-transform duration-1000" />
+              <div className="relative text-emerald-500 mb-4 group-hover/service:scale-110 group-hover/service:rotate-3 transition-all duration-300">
                 {service.icon}
               </div>
-              <h3 className="text-lg font-bold mb-2 text-slate-900">
+              <h3 className="relative text-xl font-bold mb-3 text-white group-hover/service:text-emerald-400 transition-colors duration-300">
                 {service.title}
               </h3>
-              <p className="text-slate-600 leading-relaxed text-sm">
+                            <p className="relative text-slate-400 text-sm leading-relaxed">
                 {service.description}
               </p>
             </div>
