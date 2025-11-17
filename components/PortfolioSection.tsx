@@ -5,7 +5,7 @@ import type { Project } from '../types';
 const projects: Project[] = [
   {
     image: 'https://mkdocs-201908.s3.sa-east-1.amazonaws.com/1624/production/74eefcd92a414c5c3ea738f1775fa39d_1624/production/image.png',
-    name: 'Naturaly - Beleza e Cuidado',
+    name: 'Naturaly',
     challenge: 'Landing page profissional para divulgar produto e aumentar credibilidade.',
     solution: 'Site moderno que conta a história, apresenta o produto e facilita o contato para vendas.',
     link: 'https://natur-aly.github.io/Naturaly/#',
