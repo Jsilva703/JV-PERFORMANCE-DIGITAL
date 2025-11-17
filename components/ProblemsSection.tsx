@@ -69,15 +69,15 @@ const ProblemsSection: React.FC<ProblemsSectionProps> = ({ setCurrentPage }) => 
             <div className="inline-block px-6 py-2.5 bg-gradient-to-r from-red-500/20 to-orange-500/20 backdrop-blur-sm border border-red-500/40 rounded-full mb-6 shadow-lg shadow-red-500/20 hover:shadow-red-500/40 transition-all duration-300 hover:scale-105 animate-pulse">
               <span className="text-red-400 text-sm font-bold">⚠️ Problemas Comuns</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-white">
-              Seu Negócio Merece <span className="bg-gradient-to-r from-red-400 via-orange-400 to-red-500 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(239,68,68,0.3)]">Mais Que Links Amadores</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white leading-tight">
+              Seu Negócio Merece <span className="block sm:inline bg-gradient-to-r from-red-400 via-orange-400 to-red-500 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(239,68,68,0.3)]">Mais Que Links Amadores</span>
             </h2>
-            <p className="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">
+            <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
               Pare de perder clientes por falta de profissionalismo. <span className="text-emerald-400 font-semibold">Veja qual solução</span> é ideal para você:
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {problems.map((item, index) => (
               <div
                 key={index}

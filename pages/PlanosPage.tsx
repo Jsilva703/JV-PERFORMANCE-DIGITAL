@@ -21,17 +21,18 @@ const PlanosPage: React.FC<PlanosPageProps> = ({ setCurrentPage }) => {
         
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-block px-6 py-3 bg-gradient-to-r from-red-500/20 to-orange-500/20 backdrop-blur-xl border border-red-500/50 rounded-full mb-8 shadow-2xl shadow-red-500/30 hover:shadow-red-500/50 transition-all duration-300 hover:scale-105 animate-pulse">
-              <span className="text-red-400 font-bold flex items-center gap-2">
-                <span className="text-xl">🔥</span>
-                <span>Black Friday: Até 35% OFF - Só até 30/11!</span>
-                <span className="text-xl">🔥</span>
+            <div className="inline-block px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-red-500/20 to-orange-500/20 backdrop-blur-xl border border-red-500/50 rounded-full mb-6 sm:mb-8 shadow-2xl shadow-red-500/30 hover:shadow-red-500/50 transition-all duration-300 hover:scale-105 animate-pulse">
+              <span className="text-red-400 font-bold flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm md:text-base">
+                <span className="text-base sm:text-xl">🔥</span>
+                <span className="hidden sm:inline">Black Friday: Até 35% OFF - Só até 30/11!</span>
+                <span className="sm:hidden">Black Friday: 35% OFF</span>
+                <span className="text-base sm:text-xl">🔥</span>
               </span>
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 sm:mb-8 text-white leading-tight">
-              Escolha o <span className="bg-gradient-to-r from-emerald-400 via-emerald-500 to-emerald-600 bg-clip-text text-transparent drop-shadow-[0_0_40px_rgba(16,185,129,0.4)]">Plano Ideal</span> para o Seu Negócio
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 sm:mb-8 text-white leading-tight px-4">
+              Escolha o <span className="block sm:inline bg-gradient-to-r from-emerald-400 via-emerald-500 to-emerald-600 bg-clip-text text-transparent drop-shadow-[0_0_40px_rgba(16,185,129,0.4)]">Plano Ideal</span> <span className="block sm:inline">para o Seu Negócio</span>
             </h1>
-            <p className="text-lg sm:text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-slate-300 mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed px-4">
               Planos completos com <span className="text-emerald-400 font-semibold">tudo que você precisa</span> para ter uma presença digital profissional e começar a vender online.
             </p>
           </div>
@@ -53,7 +54,7 @@ const PlanosPage: React.FC<PlanosPageProps> = ({ setCurrentPage }) => {
               <p className="text-slate-300 text-lg max-w-2xl mx-auto">Compromisso com qualidade, rapidez e resultados reais</p>
             </div>
             
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               <div className="relative group/card">
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-2xl blur opacity-0 group-hover/card:opacity-30 transition duration-500"></div>
                 <div className="relative bg-slate-900/80 backdrop-blur-xl p-8 rounded-2xl border border-slate-700/50 hover:border-emerald-500/70 transition-all duration-500 hover:scale-105 overflow-hidden text-center">

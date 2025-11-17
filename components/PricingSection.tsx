@@ -156,7 +156,7 @@ const PricingCard: React.FC<{ plan: Plan }> = ({ plan }) => {
 
   return (
     <div
-      className={`p-6 rounded-2xl shadow-xl relative flex flex-col h-full ${cardClasses} transition-all duration-500 group/card z-10`}
+      className={`p-5 sm:p-6 rounded-2xl shadow-xl relative flex flex-col h-full ${cardClasses} transition-all duration-500 group/card z-10`}
     >
       {/* Efeito de brilho */}
       <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 via-emerald-500/5 to-emerald-500/0 opacity-0 group-hover/card:opacity-100 transition-opacity duration-700 pointer-events-none" />
@@ -174,8 +174,8 @@ const PricingCard: React.FC<{ plan: Plan }> = ({ plan }) => {
       )}
 
       <div className="flex-grow flex flex-col relative z-10">
-        <h3 className="text-xl font-bold text-center mb-3 text-white min-h-[3.5rem] flex items-center justify-center">{plan.name}</h3>
-        <p className="text-slate-400 text-center mb-6 text-sm min-h-[4rem] flex items-center justify-center">
+        <h3 className="text-lg sm:text-xl font-bold text-center mb-3 text-white min-h-[3rem] sm:min-h-[3.5rem] flex items-center justify-center px-2">{plan.name}</h3>
+        <p className="text-slate-400 text-center mb-4 sm:mb-6 text-xs sm:text-sm min-h-[3.5rem] sm:min-h-[4rem] flex items-center justify-center px-2 leading-relaxed">
           {plan.description}
         </p>
         <div className="text-center mb-6 py-4 bg-slate-950/50 rounded-xl border border-slate-700/30">

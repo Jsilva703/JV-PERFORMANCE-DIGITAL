@@ -83,7 +83,7 @@ const PortfolioSection: React.FC = () => {
             Confira alguns dos nossos <span className="text-emerald-400 font-semibold">projetos de sucesso</span> que transformaram negócios
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
           {projects.map((project, index) => (
             <ProjectCard key={index} project={project} />
           ))}
