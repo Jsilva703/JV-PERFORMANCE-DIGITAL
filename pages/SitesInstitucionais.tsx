@@ -35,30 +35,35 @@ const SitesInstitucionais: React.FC<SitesInstitucionaisProps> = ({ setCurrentPag
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-slate-100">
+    <div className="min-h-screen bg-slate-900">
       {/* Hero Section */}
-      <section className="py-12 sm:py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
-        <div className="container mx-auto px-4 sm:px-6">
+      <section className="relative pt-24 pb-16 sm:pt-32 sm:pb-20 bg-slate-950 overflow-hidden">
+        {/* Background futurista */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000,transparent)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-emerald-500/5 via-transparent to-transparent" />
+        
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-block px-4 py-2 bg-blue-500/10 border border-blue-500/30 rounded-full mb-4">
-              <span className="text-blue-600 text-sm font-semibold">🏢 Sites Institucionais</span>
+            <div className="inline-block px-4 py-2 bg-gradient-to-r from-emerald-500/10 to-emerald-600/10 backdrop-blur-sm border border-emerald-500/30 rounded-full mb-6 shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40 transition-all duration-300 hover:scale-105">
+              <span className="text-emerald-500 text-sm font-semibold">🏢 Sites Institucionais</span>
             </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-slate-900">
-              Sites Institucionais Profissionais
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 text-white leading-tight">
+              <span className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">Sites Institucionais</span> Profissionais
             </h1>
-            <p className="text-base sm:text-lg text-slate-600 mb-8">
+            <p className="text-base sm:text-lg text-slate-400 mb-8">
               Presença digital completa para sua empresa. Site profissional com múltiplas páginas, otimizado para SEO e resultados.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
                 href="#exemplos" 
-                className="px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-bold rounded-xl hover:shadow-lg transition-all"
+                className="group/cta relative px-8 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-bold rounded-xl transition-all duration-300 shadow-2xl shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:scale-105 overflow-hidden"
               >
-                Ver Exemplos
+                <div className="absolute inset-0 -translate-x-full group-hover/cta:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                <span className="relative">Ver Exemplos</span>
               </a>
               <button 
                 onClick={handleViewPlans}
-                className="px-6 py-3 bg-white text-slate-900 font-semibold rounded-xl border-2 border-slate-200 hover:border-blue-500 transition-all"
+                className="px-8 py-4 bg-slate-800/50 backdrop-blur-sm border-2 border-slate-700/50 hover:border-emerald-500/50 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105"
               >
                 Ver Preços
               </button>
@@ -68,37 +73,41 @@ const SitesInstitucionais: React.FC<SitesInstitucionaisProps> = ({ setCurrentPag
       </section>
 
       {/* O que é um Site Institucional */}
-      <section className="py-12 sm:py-16">
+      <section className="py-12 sm:py-16 bg-slate-800/50 backdrop-blur-sm">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-slate-900 text-center">
-              O que é um Site Institucional?
+            <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-white text-center">
+              O que é um <span className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">Site Institucional</span>?
             </h2>
-            <p className="text-slate-600 mb-6 text-center">
+            <p className="text-slate-400 mb-6 text-center">
               Um site institucional é a vitrine digital completa da sua empresa. Com múltiplas páginas, ele apresenta 
               seus serviços, história, equipe e valores de forma profissional e organizada.
             </p>
             
             <div className="grid sm:grid-cols-2 gap-6 mt-8">
-              <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-lg">
-                <div className="text-3xl mb-3">📄</div>
-                <h3 className="font-bold text-slate-900 mb-2">Múltiplas Páginas</h3>
-                <p className="text-sm text-slate-600">Home, Sobre, Serviços, Portfólio, Blog, Contato e mais</p>
+              <div className="relative bg-slate-900/50 backdrop-blur-sm p-6 rounded-xl border border-slate-700/50 shadow-lg hover:border-emerald-500/50 hover:bg-slate-900/80 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/10 group/card overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 via-emerald-500/5 to-emerald-500/0 opacity-0 group-hover/card:opacity-100 transition-opacity duration-700" />
+                <div className="relative text-3xl mb-3 group-hover/card:scale-110 transition-transform duration-300">📄</div>
+                <h3 className="relative font-bold text-white mb-2 group-hover/card:text-emerald-400 transition-colors">Múltiplas Páginas</h3>
+                <p className="text-sm text-slate-400">Home, Sobre, Serviços, Portfólio, Blog, Contato e mais</p>
               </div>
-              <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-lg">
-                <div className="text-3xl mb-3">🎨</div>
-                <h3 className="font-bold text-slate-900 mb-2">Identidade Visual</h3>
-                <p className="text-sm text-slate-600">Design personalizado que reflete a essência da sua marca</p>
+              <div className="relative bg-slate-900/50 backdrop-blur-sm p-6 rounded-xl border border-slate-700/50 shadow-lg hover:border-emerald-500/50 hover:bg-slate-900/80 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/10 group/card overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 via-emerald-500/5 to-emerald-500/0 opacity-0 group-hover/card:opacity-100 transition-opacity duration-700" />
+                <div className="relative text-3xl mb-3 group-hover/card:scale-110 transition-transform duration-300">🎨</div>
+                <h3 className="relative font-bold text-white mb-2 group-hover/card:text-emerald-400 transition-colors">Identidade Visual</h3>
+                <p className="text-sm text-slate-400">Design personalizado que reflete a essência da sua marca</p>
               </div>
-              <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-lg">
-                <div className="text-3xl mb-3">🔍</div>
-                <h3 className="font-bold text-slate-900 mb-2">SEO Avançado</h3>
-                <p className="text-sm text-slate-600">Otimização completa para ranquear bem no Google</p>
+              <div className="relative bg-slate-900/50 backdrop-blur-sm p-6 rounded-xl border border-slate-700/50 shadow-lg hover:border-emerald-500/50 hover:bg-slate-900/80 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/10 group/card overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 via-emerald-500/5 to-emerald-500/0 opacity-0 group-hover/card:opacity-100 transition-opacity duration-700" />
+                <div className="relative text-3xl mb-3 group-hover/card:scale-110 transition-transform duration-300">🔍</div>
+                <h3 className="relative font-bold text-white mb-2 group-hover/card:text-emerald-400 transition-colors">SEO Avançado</h3>
+                <p className="text-sm text-slate-400">Otimização completa para ranquear bem no Google</p>
               </div>
-              <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-lg">
-                <div className="text-3xl mb-3">💼</div>
-                <h3 className="font-bold text-slate-900 mb-2">Credibilidade</h3>
-                <p className="text-sm text-slate-600">Transmite profissionalismo e confiança para seus clientes</p>
+              <div className="relative bg-slate-900/50 backdrop-blur-sm p-6 rounded-xl border border-slate-700/50 shadow-lg hover:border-emerald-500/50 hover:bg-slate-900/80 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/10 group/card overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 via-emerald-500/5 to-emerald-500/0 opacity-0 group-hover/card:opacity-100 transition-opacity duration-700" />
+                <div className="relative text-3xl mb-3 group-hover/card:scale-110 transition-transform duration-300">💼</div>
+                <h3 className="relative font-bold text-white mb-2 group-hover/card:text-emerald-400 transition-colors">Credibilidade</h3>
+                <p className="text-sm text-slate-400">Transmite profissionalismo e confiança para seus clientes</p>
               </div>
             </div>
           </div>
@@ -106,11 +115,11 @@ const SitesInstitucionais: React.FC<SitesInstitucionaisProps> = ({ setCurrentPag
       </section>
 
       {/* Páginas Incluídas */}
-      <section className="py-12 sm:py-16 bg-slate-50">
+      <section className="py-12 sm:py-16 bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-slate-900 text-center">
-              Páginas Incluídas
+            <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-white text-center">
+              <span className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">Páginas</span> Incluídas
             </h2>
             
             <div className="grid sm:grid-cols-2 gap-4">
@@ -122,11 +131,11 @@ const SitesInstitucionais: React.FC<SitesInstitucionaisProps> = ({ setCurrentPag
                 { icon: '📝', title: 'Blog', desc: 'Conteúdo para SEO e autoridade' },
                 { icon: '📞', title: 'Contato', desc: 'Formulário e informações' },
               ].map((page, idx) => (
-                <div key={idx} className="bg-white p-4 rounded-lg border border-slate-200 flex items-center gap-4">
+                <div key={idx} className="bg-slate-800 p-4 rounded-lg border border-slate-700 flex items-center gap-4">
                   <div className="text-3xl">{page.icon}</div>
                   <div>
-                    <h3 className="font-bold text-slate-900">{page.title}</h3>
-                    <p className="text-xs text-slate-600">{page.desc}</p>
+                    <h3 className="font-bold text-white">{page.title}</h3>
+                    <p className="text-xs text-slate-400">{page.desc}</p>
                   </div>
                 </div>
               ))}
@@ -136,16 +145,16 @@ const SitesInstitucionais: React.FC<SitesInstitucionaisProps> = ({ setCurrentPag
       </section>
 
       {/* Exemplos */}
-      <section id="exemplos" className="py-12 sm:py-16">
+      <section id="exemplos" className="py-12 sm:py-16 bg-slate-800/50 backdrop-blur-sm">
         <div className="container mx-auto px-4 sm:px-6">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-slate-900 text-center">
-            Exemplos de Sites Institucionais
+          <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-white text-center">
+            <span className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">Exemplos</span> de Sites Institucionais
           </h2>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {examples.map((example, idx) => (
-              <div key={idx} className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
-                <div className="h-48 bg-slate-200 relative overflow-hidden">
+              <div key={idx} className="bg-slate-900 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all border border-slate-700">
+                <div className="h-48 bg-slate-950 relative overflow-hidden">
                   <img 
                     src={example.image} 
                     alt={example.title}
@@ -153,12 +162,12 @@ const SitesInstitucionais: React.FC<SitesInstitucionaisProps> = ({ setCurrentPag
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="font-bold text-lg mb-2 text-slate-900">{example.title}</h3>
-                  <p className="text-sm text-slate-600 mb-4">{example.description}</p>
+                  <h3 className="font-bold text-lg mb-2 text-white">{example.title}</h3>
+                  <p className="text-sm text-slate-400 mb-4">{example.description}</p>
                   <ul className="space-y-2">
                     {example.features.map((feature, i) => (
-                      <li key={i} className="flex items-center text-xs text-slate-600">
-                        <svg className="w-4 h-4 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <li key={i} className="flex items-center text-xs text-slate-400">
+                        <svg className="w-4 h-4 text-emerald-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                         {feature}
@@ -173,27 +182,28 @@ const SitesInstitucionais: React.FC<SitesInstitucionaisProps> = ({ setCurrentPag
       </section>
 
       {/* CTA Final */}
-      <section className="py-12 sm:py-16 bg-slate-50">
+      <section className="py-12 sm:py-16 bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-3xl mx-auto bg-gradient-to-br from-blue-500 to-indigo-500 rounded-2xl p-8 sm:p-12 text-center text-white">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-              Pronto para ter seu Site Institucional?
+          <div className="max-w-3xl mx-auto bg-slate-800 rounded-2xl p-8 sm:p-12 text-center border border-slate-700">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-white">
+              Pronto para ter seu <span className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">Site Institucional</span>?
             </h2>
-            <p className="text-blue-50 mb-8">
+            <p className="text-slate-400 mb-8">
               Construa a presença digital profissional que sua empresa merece
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
                 onClick={handleViewPlans}
-                className="px-8 py-3 bg-white text-blue-600 font-bold rounded-xl hover:shadow-2xl transition-all"
+                className="group/cta relative px-8 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-bold rounded-xl transition-all duration-300 shadow-2xl shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:scale-105 overflow-hidden"
               >
-                Ver Planos e Preços
+                <div className="absolute inset-0 -translate-x-full group-hover/cta:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                <span className="relative">Ver Planos e Preços</span>
               </button>
               <a 
                 href="https://wa.me/5511952445898?text=Olá!%20Quero%20criar%20um%20Site%20Institucional"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-3 bg-transparent border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-blue-600 transition-all"
+                className="px-8 py-4 bg-slate-800/50 backdrop-blur-sm border-2 border-slate-700/50 hover:border-emerald-500/50 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105"
               >
                 Falar no WhatsApp
               </a>
