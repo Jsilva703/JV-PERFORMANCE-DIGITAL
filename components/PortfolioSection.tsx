@@ -21,40 +21,40 @@ const projects: Project[] = [
 
 const PortfolioSection: React.FC = () => {
   return (
-    <section id="portfolio" className="relative py-16 sm:py-20 bg-white">
+    <section id="portfolio" className="relative border-y border-white/10 bg-slate-900/80 py-16 sm:py-20">
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl">
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-emerald-800">Projetos</p>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-slate-950">Trabalhos reais, com contexto real.</h2>
-            <p className="mt-4 text-lg leading-8 text-slate-600">
-              A próxima etapa é fortalecer ainda mais esta área com depoimentos, resultados e bastidores de cada projeto.
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-emerald-300">Projetos</p>
+            <h2 className="mt-3 text-3xl font-black tracking-tight text-white sm:text-5xl">Projetos publicados, não promessa vazia.</h2>
+            <p className="mt-5 text-lg leading-8 text-slate-300">
+              A ideia agora é fortalecer cada vez mais esta área com novos trabalhos, depoimentos e resultados.
             </p>
           </div>
-          <a href="https://wa.me/5511952445898?text=Ol%C3%A1%2C%20vi%20os%20projetos%20da%20JV%20Performance%20e%20quero%20conversar%20sobre%20meu%20site." target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:border-slate-400">
+          <a href="https://wa.me/5511952445898?text=Ol%C3%A1%2C%20vi%20os%20projetos%20da%20JV%20Performance%20e%20quero%20conversar%20sobre%20meu%20site." target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/8 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/12">
             Quero um projeto assim
           </a>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl">
+        <div className="mt-10 grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2">
           {projects.map((project) => (
-            <article key={project.name} className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-              <div className="aspect-[16/10] overflow-hidden bg-slate-100">
-                <img src={project.image} alt={`Preview do projeto ${project.name}`} className="h-full w-full object-cover" />
+            <article key={project.name} className="overflow-hidden rounded-3xl border border-white/10 bg-slate-950 shadow-2xl shadow-black/20">
+              <div className="aspect-[16/10] overflow-hidden bg-slate-900">
+                <img src={project.image} alt={`Preview do projeto ${project.name}`} className="h-full w-full object-cover opacity-95" />
               </div>
               <div className="p-6">
                 <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-2xl font-bold text-slate-950">{project.name}</h3>
-                  <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-800">Publicado</span>
+                  <h3 className="text-2xl font-black text-white">{project.name}</h3>
+                  <span className="rounded-full bg-emerald-400/10 px-3 py-1 text-xs font-bold text-emerald-300">Publicado</span>
                 </div>
                 <dl className="mt-5 space-y-4">
                   <div>
                     <dt className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">Desafio</dt>
-                    <dd className="mt-1 text-sm leading-6 text-slate-700">{project.challenge}</dd>
+                    <dd className="mt-1 text-sm leading-6 text-slate-300">{project.challenge}</dd>
                   </div>
                   <div>
                     <dt className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">Solução</dt>
-                    <dd className="mt-1 text-sm leading-6 text-slate-700">{project.solution}</dd>
+                    <dd className="mt-1 text-sm leading-6 text-slate-300">{project.solution}</dd>
                   </div>
                 </dl>
                 <a
@@ -65,7 +65,7 @@ const PortfolioSection: React.FC = () => {
                     trackPortfolioClick(project.name, project.link);
                     trackExternalLink(project.link, `Projeto: ${project.name}`);
                   }}
-                  className="mt-6 inline-flex text-sm font-bold text-emerald-800 hover:text-emerald-950"
+                  className="mt-6 inline-flex text-sm font-bold text-emerald-300 hover:text-emerald-200"
                 >
                   Abrir projeto publicado
                 </a>

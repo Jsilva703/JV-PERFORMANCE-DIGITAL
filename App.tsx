@@ -106,7 +106,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#f6f4ef] text-slate-950">
+    <div className="relative min-h-screen bg-slate-950 text-slate-100">
       <AnimatedBackground />
       <div className="relative z-10">
         <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />

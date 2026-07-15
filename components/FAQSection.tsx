@@ -39,26 +39,26 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="relative py-16 sm:py-20 bg-white">
+    <section id="faq" className="relative border-y border-white/10 bg-slate-900/80 py-16 sm:py-20">
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-10 max-w-7xl mx-auto">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-emerald-800">FAQ</p>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-slate-950">Perguntas que evitam ruído no projeto.</h2>
-            <p className="mt-4 text-lg leading-8 text-slate-600">
-              Transparência também vende. Aqui ficam os pontos principais antes de começarmos.
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-emerald-300">FAQ</p>
+            <h2 className="mt-3 text-3xl font-black tracking-tight text-white sm:text-5xl">Transparência sem enrolação.</h2>
+            <p className="mt-5 text-lg leading-8 text-slate-300">
+              Respostas diretas para você saber o que está contratando e o que esperar do processo.
             </p>
           </div>
 
           <div className="space-y-3">
             {faqData.map((faq, index) => (
-              <div key={faq.question} className="rounded-xl border border-slate-200 bg-slate-50 overflow-hidden">
+              <div key={faq.question} className="overflow-hidden rounded-2xl border border-white/10 bg-slate-950/70">
                 <button onClick={() => toggleFAQ(index)} className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left">
-                  <span className="font-bold text-slate-950">{faq.question}</span>
-                  <span className="text-sm font-bold text-emerald-800">{openIndex === index ? '-' : '+'}</span>
+                  <span className="font-bold text-white">{faq.question}</span>
+                  <span className="text-lg font-black text-emerald-300">{openIndex === index ? '-' : '+'}</span>
                 </button>
                 {openIndex === index && (
-                  <div className="border-t border-slate-200 px-5 py-4 text-sm leading-7 text-slate-700">
+                  <div className="border-t border-white/10 px-5 py-4 text-sm leading-7 text-slate-300">
                     {faq.answer}
                   </div>
                 )}
