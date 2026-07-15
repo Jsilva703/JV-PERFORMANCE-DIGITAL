@@ -1,96 +1,47 @@
-
 import React from 'react';
 
 const services = [
   {
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
-    ),
-    title: 'Design Responsivo',
-    description: 'Sites que funcionam perfeitamente em celulares, tablets e desktops. Seus clientes terão a melhor experiência em qualquer dispositivo.'
+    title: 'Landing pages e páginas de venda',
+    description: 'Páginas focadas em apresentar uma oferta, capturar interessados e levar o visitante para uma ação clara.',
   },
   {
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    ),
-    title: 'Performance Otimizada',
-    description: 'Carregamento ultrarrápido que mantém seus visitantes engajados. Sites lentos perdem clientes, o seu não vai.'
+    title: 'Sites institucionais',
+    description: 'Estrutura completa para explicar sua empresa, serviços, diferenciais, portfólio e formas de contato.',
   },
   {
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-      </svg>
-    ),
-    title: 'SEO Otimizado',
-    description: 'Seu site preparado para aparecer no Google. Otimização técnica completa para ser encontrado pelos seus clientes.'
+    title: 'Design responsivo',
+    description: 'Interface pensada para celular e desktop, com hierarquia visual e leitura confortável em qualquer tela.',
   },
   {
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-      </svg>
-    ),
-    title: 'Integração WhatsApp',
-    description: 'Botão de contato direto via WhatsApp para facilitar a comunicação com seus clientes e aumentar conversões.'
+    title: 'Publicação e configuração',
+    description: 'Apoio em domínio, hospedagem, WhatsApp, formulário, tags básicas e ajustes técnicos antes da entrega.',
   },
-  {
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-      </svg>
-    ),
-    title: 'Design Moderno',
-    description: 'Visual profissional e atraente que transmite credibilidade. Seu negócio merece uma imagem à altura do que oferece.'
-  },
-  {
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-    title: 'Entrega Rápida',
-    description: 'Seu site pronto em até 48 horas. Não espere semanas para começar a ter resultados online.'
-  }
 ];
 
 const ServicesSection: React.FC = () => {
   return (
-    <section id="servicos" className="py-12 sm:py-16 bg-slate-900 relative overflow-hidden">
-      {/* Background effects */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,0.05),transparent_50%)]" />
-      <div className="container mx-auto px-4 sm:px-6 relative z-10">
-                <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-            Nossos <span className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">Serviços</span>
+    <section id="servicos" className="relative py-16 sm:py-20 bg-white">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="max-w-3xl">
+          <p className="text-sm font-bold uppercase tracking-[0.18em] text-emerald-800">O que eu entrego</p>
+          <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-slate-950">
+            Um site com estrutura, visual profissional e caminho claro para contato.
           </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto text-lg">
-            Soluções completas para transformar sua presença digital
+          <p className="mt-4 text-lg leading-8 text-slate-600">
+            O objetivo não é só deixar bonito. É organizar sua mensagem para o cliente entender rápido o que você faz, por que confiar e como falar com você.
           </p>
         </div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
+
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {services.map((service, index) => (
-            <div 
-              key={index}
-              className="relative bg-slate-800/50 backdrop-blur-sm p-6 rounded-2xl border border-slate-700/50 hover:border-emerald-500/50 hover:bg-slate-800/80 hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-500 hover:transform hover:scale-105 group/service overflow-hidden"
-            >
-              {/* Efeito de brilho */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-500/5 to-transparent translate-x-[-100%] group-hover/service:translate-x-[100%] transition-transform duration-1000" />
-              <div className="relative text-emerald-500 mb-4 group-hover/service:scale-110 group-hover/service:rotate-3 transition-all duration-300">
-                {service.icon}
+            <article key={service.title} className="rounded-xl border border-slate-200 bg-slate-50 p-6">
+              <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-lg bg-slate-950 text-sm font-bold text-white">
+                {String(index + 1).padStart(2, '0')}
               </div>
-              <h3 className="relative text-xl font-bold mb-3 text-white group-hover/service:text-emerald-400 transition-colors duration-300">
-                {service.title}
-              </h3>
-                            <p className="relative text-slate-400 text-sm leading-relaxed">
-                {service.description}
-              </p>
-            </div>
+              <h3 className="text-lg font-bold text-slate-950">{service.title}</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-600">{service.description}</p>
+            </article>
           ))}
         </div>
       </div>

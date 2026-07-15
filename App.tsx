@@ -1,5 +1,4 @@
-
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import AnimatedBackground from './components/AnimatedBackground';
 import Header from './components/Header';
@@ -11,23 +10,22 @@ import PricingSection from './components/PricingSection';
 import FAQSection from './components/FAQSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
-import AnimatedSection from './components/AnimatedSection';
 import LandingPages from './pages/LandingPages';
 import SitesInstitucionais from './pages/SitesInstitucionais';
 import DesignResponsivo from './pages/DesignResponsivo';
 import PlanosPage from './pages/PlanosPage';
 import FAQPage from './pages/FAQPage';
-import { trackPageView, trackTimeOnPage, trackScrollDepth } from './utils/analytics';
+import { trackPageView, trackScrollDepth, trackTimeOnPage } from './utils/analytics';
 
 export type Page = 'home' | 'landing-pages' | 'sites-institucionais' | 'design-responsivo' | 'planos' | 'faq';
 
 const pageMetadata: Record<Page, { title: string; path: string }> = {
-  'home': { title: 'Home - JV Performance Digital', path: '/' },
+  home: { title: 'JV Performance Digital - Sites profissionais para pequenos negócios', path: '/' },
   'landing-pages': { title: 'Landing Pages - JV Performance Digital', path: '/landing-pages' },
   'sites-institucionais': { title: 'Sites Institucionais - JV Performance Digital', path: '/sites-institucionais' },
   'design-responsivo': { title: 'Design Responsivo - JV Performance Digital', path: '/design-responsivo' },
-  'planos': { title: 'Planos e Preços - JV Performance Digital', path: '/planos' },
-  'faq': { title: 'FAQ - Perguntas Frequentes - JV Performance Digital', path: '/faq' },
+  planos: { title: 'Planos - JV Performance Digital', path: '/planos' },
+  faq: { title: 'FAQ - JV Performance Digital', path: '/faq' },
 };
 
 const App: React.FC = () => {
@@ -35,51 +33,32 @@ const App: React.FC = () => {
   const [pageStartTime, setPageStartTime] = useState<number>(Date.now());
   const [scrollTracked, setScrollTracked] = useState<Set<number>>(new Set());
 
-  // Rastrear mudança de página
   useEffect(() => {
     const metadata = pageMetadata[currentPage];
-    
-    // Rastrear tempo na página anterior
     const timeSpent = Math.floor((Date.now() - pageStartTime) / 1000);
-    if (timeSpent > 3) { // Só rastreia se passou mais de 3 segundos
-      const previousPage = Object.keys(pageMetadata).find(
-        key => pageMetadata[key as Page].path === window.location.pathname
-      );
-      if (previousPage) {
-        trackTimeOnPage(previousPage, timeSpent);
-      }
+
+    if (timeSpent > 3) {
+      trackTimeOnPage(currentPage, timeSpent);
     }
-    
-    // Rastrear nova página
+
     trackPageView(currentPage, metadata.title);
-    
-    // Atualizar título da página
     document.title = metadata.title;
-    
-    // Resetar tempo de início
     setPageStartTime(Date.now());
-    
-    // Resetar scroll tracking
     setScrollTracked(new Set());
-    
-    // Scroll para o topo
     window.scrollTo(0, 0);
   }, [currentPage]);
 
-  // Rastrear scroll depth
   useEffect(() => {
     const handleScroll = () => {
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight - windowHeight;
-      const scrolled = window.scrollY;
-      const scrollPercentage = Math.round((scrolled / documentHeight) * 100);
-      
-      // Rastrear marcos importantes: 25%, 50%, 75%, 100%
-      const milestones = [25, 50, 75, 90];
-      milestones.forEach(milestone => {
+      if (documentHeight <= 0) return;
+
+      const scrollPercentage = Math.round((window.scrollY / documentHeight) * 100);
+      [25, 50, 75, 90].forEach((milestone) => {
         if (scrollPercentage >= milestone && !scrollTracked.has(milestone)) {
           trackScrollDepth(milestone, currentPage);
-          setScrollTracked(prev => new Set(prev).add(milestone));
+          setScrollTracked((prev) => new Set(prev).add(milestone));
         }
       });
     };
@@ -88,13 +67,10 @@ const App: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [currentPage, scrollTracked]);
 
-  // Rastrear tempo ao sair da página
   useEffect(() => {
     const handleBeforeUnload = () => {
       const timeSpent = Math.floor((Date.now() - pageStartTime) / 1000);
-      if (timeSpent > 3) {
-        trackTimeOnPage(currentPage, timeSpent);
-      }
+      if (timeSpent > 3) trackTimeOnPage(currentPage, timeSpent);
     };
 
     window.addEventListener('beforeunload', handleBeforeUnload);
@@ -118,29 +94,25 @@ const App: React.FC = () => {
         return (
           <main>
             <HeroSection setCurrentPage={setCurrentPage} />
-            <AnimatedSection>
-              <ProblemsSection setCurrentPage={setCurrentPage} />
-            </AnimatedSection>
-            <AnimatedSection>
-              <ServicesSection />
-            </AnimatedSection>
-            <AnimatedSection>
-              <PortfolioSection />
-            </AnimatedSection>
-            <AnimatedSection>
-              <ContactSection />
-            </AnimatedSection>
+            <ProblemsSection />
+            <ServicesSection />
+            <PortfolioSection />
+            <PricingSection />
+            <FAQSection />
+            <ContactSection />
           </main>
         );
     }
   };
 
   return (
-    <div className="bg-slate-900 text-slate-100 relative">
+    <div className="relative min-h-screen bg-[#f6f4ef] text-slate-950">
       <AnimatedBackground />
-      <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
-      {renderPage()}
-      <Footer setCurrentPage={setCurrentPage} />
+      <div className="relative z-10">
+        <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
+        {renderPage()}
+        <Footer setCurrentPage={setCurrentPage} />
+      </div>
       <Analytics />
     </div>
   );
